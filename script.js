@@ -1,19 +1,35 @@
 const log= console.log
 /*
-   APIs DOM - propriedades e métodos...   
-     _________Funcionalidades_________
+                           APIs DOM - propriedades e métodos()...   
+    Os recuros estão separados pela interface que pertencem e suas funcionalidades
 */
 
-// adicionar / inserir
+// adicionar / inserir / criar
    Node.appendChild() // adiciona elemento como o último filho ao nó atual
    Node.insertBefore() // insere um Node antes do nó de referência
+   Element.after() // insere um conjunto de nós na lista de filhos do elemento pai, logo após o elemento
+   Element.append() // insere um conjunto de nós após o último filho do elemento
+   Element.before() // Insere um conjunto nós na lista de filhos do elemento pai, antes do elemento
+   Element.prepend() // Insere um conjunto de nós antes do primeiro filho
+   Element.insertAdjacentElement() // insere um nó de elemento em uma determinada posição em relação ao elemento
+   Element.insertAdjacentHTML()// insere os nós resultantes na árvore na posição fornecida
+   Element.insertAdjacentText() // insere um nó de texto na posição dada em relação ao elemento
+   Document.append() // insere um conjunto de Node após o último filho do documento
+   Document.prepend() // insere um conjunto de Node  antes do primeiro filho
+   Document.write() // escreve texto em um documento
+   Document.createElement() // cria um novo elemento com o nome de tag fornecido
+   Document.createTextNode() // cria um nó de texto
+   Document.writeln() // grava uma linha de texto em um documento
 
-// criar 
-// verificar se contém / existe  - boolean true/false
+// verifica se contém / existe  - retorna um boolean true/false
    Node.contains() // indica se um nó é ou não um descendente do nó chamador
    Node.hasChildNodes() // indica se o elemento tem ou não nós filho 
+   Element.matches() // verifica se o elemento "é" o seletor
+   HTMLElement.hidden // indica se o elemento está oculto ou não
+   HTMLElement.inert // quando presente, faz com que o navegador "ignore" os eventos de entrada do usuário
 
 // editar / alterar/ modificar 
+
 // selecionar / obter referência
    Node.childNodes // retorna um NodeList contendo todos os filhos deste nó  
    Node.firstChild // retorna o primeiro nó filho 
@@ -27,44 +43,131 @@ const log= console.log
    Node.parentNode  // retorna o nó pai - NodeList
    Node.parentElement  // retorna o nó pai - HTMLCollection
    Node.textContent  // obtém ou define o conteúdo textual de um elemento
+   HTMLElement.innerText // representa o conteúdo de texto renderizado de um nó, substitui o conteúdo dentro do nó
+   HTMLElement.outerText // representa o conteúdo de texto renderizado de um nó, substitui todo o nó pelo texto fornecido
    Element.innerHTML // obtém ou define a marcação HTML contida dentro do el
    Element.outerHTML //retorna serialização HTML do elemento e seus descendentes
    Element.childElementCount // retorna o número de elementos filho
    Element.children // retorna os elementos filho deste elemento
    Element.firstElementChild // retorna o primeiro elemento filho
    Element.lastElementChild // retorna o último elemento filho
-   Element.nextElementSibling //retorna o próximo elemento irmão
-   Element.previousElementSibling //retorna o elemento irmão anterior 
+   Element.nextElementSibling // retorna o próximo elemento irmão
+   Element.previousElementSibling // retorna o elemento irmão anterior 
    Element.tagName // retorna uma string com o nome da tag 
+   Document.activeElement // retorna o elemento que atualmente tem foco
+   Document.body // retorna o elemento body do documento
+   Document.title // retorna o elemento title do documento
+   Document.forms // retorna os elementoS de formulário do documento
+   Document.images // retorna um HTMLCollection das imagens do documento
+   Document.links // retorna um HTMLCollection dos hiperlinks no documento
+   Document.childElementCount // retorna o número de elementos filho do documento atual
+   Document.children // retorna os elementos filho do documento atual - HTMLCollection
+   Document.documentElement // retorna o elemento que é um filho direto do documento
+   Document.firstElementChild // retorna o primeiro elemento filho do documento atual
+   Document.lastElementChild // retorna o último elemento filho do documento atual
+   Document.styleSheets // retorna folhas de estilo vinculadas ou incorporadas a um documento
+   Document.location // retorna o URI do documento atual
+   Document.readyState // retorna o status de carregamento do documento
+   Document.URL // retorna a localização do documento como uma string
+   Element.closest() // retorna o elemento que é o ancestral mais próximo do elemento atual 
+   Document.getSelection() // retorna texto selecionado pelo usuário
+   Element.getElementsByClassName()// retorna todos os elementos da classe especificada - HTMLCollection
+   Element.getElementsByTagName()// retorna todos os elementos de um determinado nome de tag - HTMLCollection
+   Document.getElementById() // retorna uma referência de objeto pelo id
+   Document.getElementsByClassName() // retorna uma lista de elementos com o nome de classe fornecido
+   Document.getElementsByTagName() // retorna uma lista de elementos com o nome de tag fornecido
+   Document.querySelector() // retorna o primeiro Node que corresponde ao seletor especificado
+   Document.querySelectorAll() // retorna uma lista de nós que correspondem ao seletor especificado - NodeList
+   Window.navigator //  retorna um referência ao objeto Navigator
+   Window.document // retorna um referência ao documento
+   Window.history // retorna uma referência ao objeto de histórico
+   Window.location // obtém/define o local, ou URL atual, do objeto de janela 
+   
 
 // manipular atributos
-   Element.attributes  // retorna todos os atributos
+   Element.attributes  // retorna uma lista com todos os atributos
    Element.classList   // retorna a lista de atributos de classe
-   Element.className  // um DOMString que obtem e difine o valor do attr
+   Element.className  // retorna um DOMString que obtem e difine o valor do attr
    Element.id // retorna o id do elemento
+   HTMLElement.dataset // fornece acesso de leitura/gravação a atributos de dados personalizados ( data-*)
+   Element.getAttribute() //retorna o valor do atributo nomeado do nó atual e o retorna como uma string
+   Element.getAttributeNames() // retorna uma matriz de nomes de atributos do elemento atual
+   Element.getAttributeNode() //recupera a representação do nó do atributo nomeado do nó atual e o retorna como um Attr
+   Element.hasAttributes() // retorna um booleano que indica se o elemento tem um ou mais atributos HTML presentes 
+   Element.removeAttribute() // remove o atributo nomeado do nó atual
+   Element.setAttribute() // define o valor de um atributo
+   Element.toggleAttribute() //alterna um atributo, removendo-o se estiver presente e adicionando-o se não estiver
+   Document.createAttribute() // cria um novo nó de atributo e o retorna
 
 // aplicar estilos
+   HTMLElement.style // lida com estilos 
+
 // manipular eventos
+   EventTarget.addEventListener() //registra um manipulador de eventos para um tipo de evento específico no elemento 
+   EventTarget.dispatchEvent() // retorna um valor booleano que indica se nenhum manipulador cancelou o evento
+   EventTarget.removeEventListener() // remove um ouvinte de evento do elemento
+
 // mover
-   Node.cloneNode() // Clonar um Node e, opcionalmente, todo o seu conteúdo
+   Node.cloneNode() // clonar um Node e, opcionalmente, todo o seu conteúdo
+   HTMLElement.draggable // um valor booleano que indica se o elemento pode ser arrastado
 
 // remover
    Node.normalize() // remover 'todos' os nós de texto sob este elemento
    Node.removeChild() // remove 'um' nó filho do elemento atual
+   Element.remove() // remove o elemento da lista de filhos de seu pai
 
 // substituir
    Node.replaceChild() // substitui um filho do nó atual pelo segundo parâmetro
+   Element.replaceChildren() // substitui os filhos existentes de um Node por um novo conjunto especificado
+   Document.replaceChildren() // substitui os filhos existentes de um documento por um novo
+   Element.replaceWith() // substitui o elemento na lista de filhos de seu pai por um conjunto de nós
 
 // dimensões de element/document/window - altura/largura
-   Element.clientHeight //retorna a altura interna do elemento
+   Element.clientHeight // retorna a altura interna do elemento
    Element.clientLeft // retorna a largura da borda esquerda do elemento
    Element.clientTop // retorna a largura da borda superior do elemento
    Element.clientWidth // retorna a largura interna do elemento
-   Element.scrollHeight //retorna a altura da visualização de rolagem de um el
+   HTMLElement.offsetParent // elemento a partir do qual todos os cálculos de deslocamento são calculados
+   HTMLElement.offsetHeight // retorna a altura de um elemento, em relação ao layout
+   HTMLElement.offsetLeft // retorna a distância da borda esquerda
+   HTMLElement.offsetTop // retorna a distância da borda superior deste elemento
+   HTMLElement.offsetWidth // retorna a largura de um elemento, em relação ao layout
+   Window.innerHeight // retorna a largura interna da janela em píxeis, se renderizada, a barra de rolagem horizontal
+   Window.innerWidth // retorna a largura interna da janela em píxeis, se renderizada, a barra de rolagem vertical
+   Window.outerHeight // obtém a altura da parte externa da janela do navegador
+   Window.outerWidth // obtém a largura da parte externa da janela do navegador
+   window.scrollY //  retorna o número de pixels que o documento está atualmente rolado verticalmente
+   window.scrollX //retorna o número de pixels que o documento está atualmente rolado horizontalmente
+   Element.getBoundingClientRect()// retorna o tamanho de um elemento e sua posição em relação à viewport
+
+   // scroll
+   Element.scrollHeight // retorna a altura da visualização de rolagem de um el
    Element.scrollLeft //retorna o deslocamento de rolagem à esquerda de um el
-   Element.scrollTop //o número de pixels na parte superior do elemento quando rolado verticalmente
-   Element.scrollWidth //a largura da visualização de rolagem do elemento
+   Element.scrollTop // retornao número de pixels na parte superior do elemento quando rolado verticalmente
+   Element.scrollWidth // retorna a largura da visualização de rolagem do elemento
+   Window.scrollBy()
+   Window.scrollTo()
+   Window.scroll()
+   Element.scroll() // rola para um determinado conjunto de coordenadas dentro de um determinado elemento
+   Element.scrollBy() // rola um elemento pela quantidade fornecida
+   Element.scrollTo() // rola para um determinado conjunto de coordenadas dentro de um determinado elemento
+   Element.scrollIntoView() // rola a página até que o elemento entre na visualização
 
+// outros
+Document.close() // fecha um fluxo de documentos para gravação
+Window.close() // fecha a janela
+Document.open() // abre um fluxo de documentos para gravação
+Window.focus() // Define o foco na janela atual
+Element.focus() // Define o foco no elemento atual
+Window.open() // abre uma nova janela
+fetch()  // inicia o processo de buscar um recurso da rede
 
+// armazenamento
+   Window.localStorage // armazenamento local usado para armazenar dados do lado do client - dados não expiram
+   Window.sessionStorage// armazenamento de sessão usado para armazenar dados - expira quando a sessão da página termina
 
-
+// times
+setInterval() // chama uma função ou executa um trecho de código repetidamente
+setTimeout() // executa uma função ou trecho de código especificado assim que o cronômetro expirar
+clearInterval()// cancela o conjunto de execução repetida usando setInterval()
+clearTimeout() // Cancela o conjunto de execução atrasada usando setTimeout()
