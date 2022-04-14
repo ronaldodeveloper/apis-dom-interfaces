@@ -6,7 +6,7 @@ const log= console.log
 
 // adicionar / inserir
    Node.appendChild() // adiciona elemento como o último filho ao nó atual
-   Node.insertBefore() // Insere um Node antes do nó de referência
+   Node.insertBefore() // insere um Node antes do nó de referência
 
 // criar 
 // verificar se contém / existe  - boolean true/false
@@ -26,8 +26,23 @@ const log= console.log
    Node.nodeValue // retorna o nó atual
    Node.parentNode  // retorna o nó pai - NodeList
    Node.parentElement  // retorna o nó pai - HTMLCollection
-   Node.textContent  // retorna ou define o conteúdo textual de um elemento
-   
+   Node.textContent  // obtém ou define o conteúdo textual de um elemento
+   Element.innerHTML // obtém ou define a marcação HTML contida dentro do el
+   Element.outerHTML //retorna serialização HTML do elemento e seus descendentes
+   Element.childElementCount // retorna o número de elementos filho
+   Element.children // retorna os elementos filho deste elemento
+   Element.firstElementChild // retorna o primeiro elemento filho
+   Element.lastElementChild // retorna o último elemento filho
+   Element.nextElementSibling //retorna o próximo elemento irmão
+   Element.previousElementSibling //retorna o elemento irmão anterior 
+   Element.tagName // retorna uma string com o nome da tag 
+
+// manipular atributos
+   Element.attributes  // retorna todos os atributos
+   Element.classList   // retorna a lista de atributos de classe
+   Element.className  // um DOMString que obtem e difine o valor do attr
+   Element.id // retorna o id do elemento
+
 // aplicar estilos
 // manipular eventos
 // mover
@@ -35,9 +50,21 @@ const log= console.log
 
 // remover
    Node.normalize() // remover 'todos' os nós de texto sob este elemento
-   Node.removeChild() // Remove 'um' nó filho do elemento atual
+   Node.removeChild() // remove 'um' nó filho do elemento atual
 
 // substituir
-   Node.replaceChild() // Substitui um filho do nó atual pelo segundo parâmetro
+   Node.replaceChild() // substitui um filho do nó atual pelo segundo parâmetro
+
+// dimensões de element/document/window - altura/largura
+   Element.clientHeight //retorna a altura interna do elemento
+   Element.clientLeft // retorna a largura da borda esquerda do elemento
+   Element.clientTop // retorna a largura da borda superior do elemento
+   Element.clientWidth // retorna a largura interna do elemento
+   Element.scrollHeight //retorna a altura da visualização de rolagem de um el
+   Element.scrollLeft //retorna o deslocamento de rolagem à esquerda de um el
+   Element.scrollTop //o número de pixels na parte superior do elemento quando rolado verticalmente
+   Element.scrollWidth //a largura da visualização de rolagem do elemento
+
+
 
 
