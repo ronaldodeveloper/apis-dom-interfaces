@@ -1,25 +1,28 @@
-const log= console.log
+
 /*
-                           APIs DOM - propriedades e métodos()...   
-    Os recuros estão separados pela interface que pertencem e suas funcionalidades
+                                   APIs DOM - Interfaces...   
+    Os recursos apresentados contém a interface que pertencem mais seus métodos e propriedades
+    Para informações de uso consulte a documentação...
+
+    Fonte: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#dom_interfaces
 */
 
 // adicionar / inserir / criar
-   Node.appendChild() // adiciona elemento como o último filho ao nó atual
    Node.insertBefore() // insere um Node antes do nó de referência
+   Element.before() // Insere um conjunto nós na lista de filhos do elemento pai, antes do elemento
    Element.after() // insere um conjunto de nós na lista de filhos do elemento pai, logo após o elemento
    Element.append() // insere um conjunto de nós após o último filho do elemento
-   Element.before() // Insere um conjunto nós na lista de filhos do elemento pai, antes do elemento
    Element.prepend() // Insere um conjunto de nós antes do primeiro filho
+   Node.appendChild() // adiciona elemento como o último filho ao nó atual
+   Document.append() // insere um conjunto de Node após o último filho do documento
+   Document.prepend() // insere um conjunto de Node antes do primeiro filho do documento
    Element.insertAdjacentElement() // insere um nó de elemento em uma determinada posição em relação ao elemento
    Element.insertAdjacentHTML()// insere os nós resultantes na árvore na posição fornecida
    Element.insertAdjacentText() // insere um nó de texto na posição dada em relação ao elemento
-   Document.append() // insere um conjunto de Node após o último filho do documento
-   Document.prepend() // insere um conjunto de Node  antes do primeiro filho
    Document.write() // escreve texto em um documento
+   Document.writeln() // grava uma linha de texto em um documento
    Document.createElement() // cria um novo elemento com o nome de tag fornecido
    Document.createTextNode() // cria um nó de texto
-   Document.writeln() // grava uma linha de texto em um documento
 
 // verifica se contém / existe  - retorna um boolean true/false
    Node.contains() // indica se um nó é ou não um descendente do nó chamador
@@ -29,60 +32,61 @@ const log= console.log
    HTMLElement.inert // quando presente, faz com que o navegador "ignore" os eventos de entrada do usuário
 
 // editar / alterar/ modificar 
-
+ 
 // selecionar / obter referência
-   Node.childNodes // retorna um NodeList contendo todos os filhos deste nó  
+   Node.childNodes // retorna um NodeList contendo todos os elementos filhos deste nó  
+   Element.children // retorna um HTMLCollection contendo apenas nós de elementos filhos deste nó
    Node.firstChild // retorna o primeiro nó filho 
+   Element.firstElementChild // retorna o primeiro elemento filho
    Node.lastChild  // retorna o último nó filho 
+   Element.lastElementChild // retorna o último elemento filho
    Node.nextSibling // retorna o próximo nó irmão 
+   Element.nextElementSibling // retorna o próximo elemento irmão
    Node.previousSibling // retorna o nó irmão anterior
-   Node.nodeName  //  retorna uma string contendo o nome do Node
-   Node.nodeType  // retorna o tipo de nó, ex: ELEMENT_NODE = 1...
-   Node.ELEMENT_NODE // retorna o tipo de nó, ex: ELEMENT_NODE = 1...
-   Node.nodeValue // retorna o nó atual
+   Element.previousElementSibling // retorna o elemento irmão anterior 
    Node.parentNode  // retorna o nó pai - NodeList
-   Node.parentElement  // retorna o nó pai - HTMLCollection
-   Node.textContent  // obtém ou define o conteúdo textual de um elemento
+   Node.parentElement  // retorna o elemento pai - HTMLCollection
+   Element.childElementCount // retorna o número de elementos filho
+   Document.childElementCount // retorna o número de elementos filho do documento atual
+   Document.children // retorna os elementos filho do documento atual - HTMLCollection
+   Document.firstElementChild // retorna o primeiro elemento filho do documento atual
+   Document.lastElementChild // retorna o último elemento filho do documento atual
+
+   Element.tagName // retorna uma string com o nome da tag 
+   Node.nodeName  //  retorna uma string contendo o nome do Node *** use 'tagName'
+   Node.ELEMENT_NODE // retorna o tipo(valor) de nó ex: 1
+   Node.nodeType  // retorna o tipo de nó, ex: ELEMENT_NODE = 1
+   Node.nodeValue // retorna o nó atual *** use 'data'
+
    HTMLElement.innerText // representa o conteúdo de texto renderizado de um nó, substitui o conteúdo dentro do nó
    HTMLElement.outerText // representa o conteúdo de texto renderizado de um nó, substitui todo o nó pelo texto fornecido
-   Element.innerHTML // obtém ou define a marcação HTML contida dentro do el
-   Element.outerHTML //retorna serialização HTML do elemento e seus descendentes
-   Element.childElementCount // retorna o número de elementos filho
-   Element.children // retorna os elementos filho deste elemento
-   Element.firstElementChild // retorna o primeiro elemento filho
-   Element.lastElementChild // retorna o último elemento filho
-   Element.nextElementSibling // retorna o próximo elemento irmão
-   Element.previousElementSibling // retorna o elemento irmão anterior 
-   Element.tagName // retorna uma string com o nome da tag 
-   Document.activeElement // retorna o elemento que atualmente tem foco
+   Element.innerHTML // obtém ou define a marcação HTML contida dentro do elemento
+   Element.outerHTML // retorna serialização HTML do elemento e seus descendentes
+   Node.textContent  // obtém ou define o conteúdo textual de um elemento
+   
    Document.body // retorna o elemento body do documento
    Document.title // retorna o elemento title do documento
    Document.forms // retorna os elementoS de formulário do documento
    Document.images // retorna um HTMLCollection das imagens do documento
    Document.links // retorna um HTMLCollection dos hiperlinks no documento
-   Document.childElementCount // retorna o número de elementos filho do documento atual
-   Document.children // retorna os elementos filho do documento atual - HTMLCollection
-   Document.documentElement // retorna o elemento que é um filho direto do documento
-   Document.firstElementChild // retorna o primeiro elemento filho do documento atual
-   Document.lastElementChild // retorna o último elemento filho do documento atual
    Document.styleSheets // retorna folhas de estilo vinculadas ou incorporadas a um documento
-   Document.location // retorna o URI do documento atual
    Document.readyState // retorna o status de carregamento do documento
    Document.URL // retorna a localização do documento como uma string
-   Element.closest() // retorna o elemento que é o ancestral mais próximo do elemento atual 
-   Document.getSelection() // retorna texto selecionado pelo usuário
-   Element.getElementsByClassName()// retorna todos os elementos da classe especificada - HTMLCollection
-   Element.getElementsByTagName()// retorna todos os elementos de um determinado nome de tag - HTMLCollection
-   Document.getElementById() // retorna uma referência de objeto pelo id
-   Document.getElementsByClassName() // retorna uma lista de elementos com o nome de classe fornecido
-   Document.getElementsByTagName() // retorna uma lista de elementos com o nome de tag fornecido
-   Document.querySelector() // retorna o primeiro Node que corresponde ao seletor especificado
-   Document.querySelectorAll() // retorna uma lista de nós que correspondem ao seletor especificado - NodeList
+   Document.documentElement // retorna o elemento que é um filho direto do documento
+   Document.activeElement // retorna o elemento que atualmente tem foco
    Window.navigator //  retorna um referência ao objeto Navigator
    Window.document // retorna um referência ao documento
    Window.history // retorna uma referência ao objeto de histórico
    Window.location // obtém/define o local, ou URL atual, do objeto de janela 
-   
+   Document.location // retorna o URI do documento atual
+   Element.closest() // retorna o elemento que é o ancestral mais próximo do elemento atual 
+   Document.getSelection() // retorna texto selecionado pelo usuário
+   Element.getElementsByClassName()// retorna todos os elementos da classe especificada - HTMLCollection
+   Document.getElementsByTagName() // retorna uma lista de elementos com o nome de tag fornecido - HTMLCollection
+   Document.getElementById() // retorna uma referência de objeto pelo id
+   Document.getElementsByClassName() // retorna uma lista de elementos com o nome de classe fornecido
+   Document.querySelector() // retorna o primeiro Node que corresponde ao seletor especificado
+   Document.querySelectorAll() // retorna uma lista de nós que correspondem ao seletor especificado - NodeList
 
 // manipular atributos
    Element.attributes  // retorna uma lista com todos os atributos
