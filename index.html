@@ -6,13 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>APIs Dom</title>
+    <style>
+        main{
+           padding:50px 0; 
+           position: relative;
+        }
+       .content{
+           width: 40%;
+           height: auto;
+           background-color: rgb(240, 240, 240);
+           border: 10px solid #fc6161;
+           margin: 0 auto;
+           padding: 25px;
+       }
+       input{
+           width: 100%;
+           padding:15px 10px;
+           margin-top: 10px;
+       }
+       button{
+          padding:10px 25px;
+          margin-top: 10px;
+          background-color: rgb(48, 48, 48);
+          color: #fc6161;
+          border: none;
+          border-radius: 25px;
+       }
+    </style>
 </head>
 <body>
 
-    <main>
-        <section>
+    <main class="main">
+        <section class="content">
             <h2><strong>Formulário</strong></h2>
-            <form action="">
+            <form class="form">
                 <div><input type="text" placeholder="digite seu nome:"></div>
                 <div><input type="text" placeholder="digite seu e-mail:"></div>
                 <button>enviar</button>
@@ -29,7 +56,8 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="geometry.js"></script>
+    <!-- <script src="script.js"></script> -->
     
 </body>
 </html>

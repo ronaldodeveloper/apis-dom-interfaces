@@ -1,10 +1,10 @@
 
 /*
-                                   APIs DOM - Interfaces...   
-    Os recursos apresentados contém a interface que pertencem mais seus métodos e propriedades
-    Para informações de uso consulte a documentação...
-
-    Fonte: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#dom_interfaces
+|                                   APIs DOM - Interfaces...   
+|    Os recursos apresentados contém a interface que pertencem mais seus métodos e propriedades
+|    Para informações de uso consulte a documentação...
+|
+|    Fonte: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model#dom_interfaces
 */
 
 // adicionar / inserir / criar
@@ -105,6 +105,7 @@
 
 // aplicar estilos
    HTMLElement.style // lida com estilos 
+   Window.getComputedStyle() // retorna um objeto contendo os valores de todas as propriedades CSS
 
 // manipular eventos
    EventTarget.addEventListener() //registra um manipulador de eventos para um tipo de evento específico no elemento 
@@ -133,37 +134,36 @@
    Element.clientWidth // retorna a largura interna do elemento
    HTMLElement.offsetParent // elemento a partir do qual todos os cálculos de deslocamento são calculados
    HTMLElement.offsetHeight // retorna a altura de um elemento, em relação ao layout
+   HTMLElement.offsetWidth // retorna a largura de um elemento, em relação ao layout
    HTMLElement.offsetLeft // retorna a distância da borda esquerda
    HTMLElement.offsetTop // retorna a distância da borda superior deste elemento
-   HTMLElement.offsetWidth // retorna a largura de um elemento, em relação ao layout
    Window.innerHeight // retorna a largura interna da janela em píxeis, se renderizada, a barra de rolagem horizontal
    Window.innerWidth // retorna a largura interna da janela em píxeis, se renderizada, a barra de rolagem vertical
    Window.outerHeight // obtém a altura da parte externa da janela do navegador
    Window.outerWidth // obtém a largura da parte externa da janela do navegador
-   window.scrollY //  retorna o número de pixels que o documento está atualmente rolado verticalmente
-   window.scrollX //retorna o número de pixels que o documento está atualmente rolado horizontalmente
    Element.getBoundingClientRect()// retorna o tamanho de um elemento e sua posição em relação à viewport
 
    // scroll
+   window.scrollY //  retorna o número de pixels que o documento está atualmente rolado verticalmente
+   window.scrollX // retorna o número de pixels que o documento está atualmente rolado horizontalmente
+   Window.pageXOffset // é o mesmo que 'window.scrollX' - *melhor compatibilidade entre os browsers
+   Window.pageYOffset // é o mesmo que 'window.scrollY' - *melhor compatibilidade entre os browsers
    Element.scrollHeight // retorna a altura da visualização de rolagem de um el
    Element.scrollLeft //retorna o deslocamento de rolagem à esquerda de um el
    Element.scrollTop // retornao número de pixels na parte superior do elemento quando rolado verticalmente
    Element.scrollWidth // retorna a largura da visualização de rolagem do elemento
-   Window.scrollBy()
-   Window.scrollTo()
-   Window.scroll()
-   Element.scroll() // rola para um determinado conjunto de coordenadas dentro de um determinado elemento
-   Element.scrollBy() // rola um elemento pela quantidade fornecida
-   Element.scrollTo() // rola para um determinado conjunto de coordenadas dentro de um determinado elemento
+   Window.scrollBy() // rola o documento na janela pelo valor especificado
+   Window.scrollTo() // rola para um determinado conjunto de coordenadas no documento
+   Window.scroll()  // rola a janela para um local específico no documento
    Element.scrollIntoView() // rola a página até que o elemento entre na visualização
 
 // outros
 Document.close() // fecha um fluxo de documentos para gravação
 Window.close() // fecha a janela
 Document.open() // abre um fluxo de documentos para gravação
+Window.open() // abre uma nova janela
 Window.focus() // Define o foco na janela atual
 Element.focus() // Define o foco no elemento atual
-Window.open() // abre uma nova janela
 fetch()  // inicia o processo de buscar um recurso da rede
 
 // armazenamento
