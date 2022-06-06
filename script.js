@@ -71,14 +71,15 @@
    Document.links // retorna um HTMLCollection dos hiperlinks no documento
    Document.styleSheets // retorna folhas de estilo vinculadas ou incorporadas a um documento
    Document.readyState // retorna o status de carregamento do documento
-   Document.URL // retorna a localização do documento como uma string
    Document.documentElement // retorna o elemento que é um filho direto do documento
    Document.activeElement // retorna o elemento que atualmente tem foco
    Window.navigator //  retorna um referência ao objeto Navigator
    Window.document // retorna um referência ao documento
    Window.history // retorna uma referência ao objeto de histórico
-   Window.location // obtém/define o local, ou URL atual, do objeto de janela 
+   Window.location // obtém/define o local, ou URL atual, do objeto de janela * 
    Document.location // retorna o URI do documento atual
+   Document.URL // retorna a localização do documento como uma string
+   document.baseURI // retorna a localização do documento como uma string
    Element.closest() // retorna o elemento que é o ancestral mais próximo do elemento atual 
    Document.getSelection() // retorna texto selecionado pelo usuário
    Element.getElementsByClassName()// retorna todos os elementos da classe especificada - HTMLCollection
